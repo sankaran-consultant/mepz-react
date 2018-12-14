@@ -1,0 +1,188 @@
+
+// Front-End-Developer
+----------------------------------------------------------
+ UI  ==> content/data + style + behavior
+
+ content  ==> HTML
+ style    ==> CSS
+
+ behavior ==> javascript
+
+----------------------------------------------------------
+
+browser   e.g chrome
+
+    1- javascript runtime/engine ( v8 )  ==> ECMAScript spec
+
+        a. call-stack => to execute function
+        b. heap       => to hold objects
+
+    2. web apis  ( DOM,XHR,Timer,... )
+
+    3. Event Queue
+
+    4. Event Loop
+
+----------------------------------------------------------
+
+
+what .js-lang can do on HTML-page in browser envi?
+
+
+using browser provided web-APIs,
+JavaScript-lang can bring any dynamic activity/data to web-page
+
+browser-APIs :  ==> are based on 'w3c' recommendations
+implemented nativly by browser vendors & abstracted as JavaScript objects & functions
+
+
+browser-APIs  :
+    ==> DOM, XHR,Timer,....
+
+using DOM
+---------------
+ -> can create,retreive,update,delete HTML elements
+ -> can change element's inner text/html content 
+ -> can change element's attributes/properties
+ -> can change element's styles ( css )
+ -> can validate form-fields before submit to server-program
+ -> can create rich UI-components like  autocomplete, calenders,..
+ -> can listen any events 
+...
+
+using XHR
+---------
+-> can communicate with server-side programs async ( AJAX )
+
+
+using Timer API
+----------------
+-> can execute any action on timeout/time-interval
+
+
+HTML5
+-------
+
+https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5
+
+
+
+//--------------------------------------------------------
+
+
+
+
+
+problems with plain-js( your code ) with browser native APIs
+------------------------------------------------------
+
+==> browser compatability issues
+     http://www.caniuse.com
+
+==> memory mamanagement  issues need to handle manuall 
+   ( i.e clean un-used DOM elements)
+
+==> performance issues shud take care manually 
+   ( i.e DOM access should be minimal )
+
+==> data-binding is manual
+
+==> too much code for simple operation
+
+==> code oraganization is difficult
+
+
+--
+
+
+
+-------------------------------------------------------------------------------------
+ soln: 
+    ==> using server-side page techonolgies
+
+            i.e JSP, ASP, PHP , freemarker, Rails,..
+
+
+    
+    Problems:
+
+    => on every request, server-programs need 
+       to re-construct same UI layout with new content,keeping client state
+    => on every request, server programs txring same static resources, 
+       this will increase n/w bandwidth   
+    => on every response, browser reloads current page with new-page     
+
+
+ 
+---------------------------------------------------------------------
+
+ 
+best-soln:
+    => using client-side(browser) page technolgies
+
+
+    ==> using third-party's .js Lib & Frameworks
+
+
+
+    Utility lib
+    --------------------------------
+
+    1. jQuery
+
+            ==> DOM + AJAX utility lib 
+
+
+    MVC/MVVM arch based lib & f.ws
+    ------------------------------
+
+    1. DOJO
+    2. Ext JS  from sencha  ( commercial )
+
+    1. knockout.js
+    2. backbone.js
+    3. ember.js
+    4. Angular.js  from google-team
+    ....
+
+
+    component based arch
+    -------------------------
+
+     w3c ==>     web-component spec ( draft )
+
+
+
+     1. react  from face-book   : v16   $rank-1
+     2. Angular                 : v7    
+     3. Ember.js
+     4. Aurelia
+     5. Polymer
+     6. Vue
+     ...
+
+
+
+.js lang
+------------
+
+- All IO operations are non-blocking by default
+- single-threaded process, 
+  still we can execute concurrent actions due non-blocking IO
+
+
+
+//-----------------------------------------------------------
+browser e.g chrome
+
+    - Javascript runtime/engine ( v8 )   ==> EcmaScript spec
+
+        a. single-call-stack  ==> to execute functions
+        b. heap               ==> to hold objects
+
+    - web APIs  ( DOM , XHR , ...)       ==> w3c proposals
+
+    - Event/Callback-Queue    
+
+    - EventLoop
+//-----------------------------------------------------------
