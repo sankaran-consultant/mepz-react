@@ -4,6 +4,10 @@ import PropTypes from 'prop-types'
 import 'bootstrap/dist/css/bootstrap.css';
 import Greeting from './components/Greeting';
 import CounterBox from './components/CounterBox';
+import Layout from './components/Layout';
+import Product from './components/Product';
+import Employee from './components/Employee';
+import A from './components/A';
 
 class App extends Component {
   constructor(props) {
@@ -30,6 +34,20 @@ class App extends Component {
         <h1>{title} -
         <span className="badge badge-dark">{trainer}</span>
         </h1>
+        <hr />
+        <A value={1000} />
+        <hr />
+        <Layout>
+          <Product />
+          <Product />
+          <Product />
+        </Layout>
+        <hr />
+        <Layout>
+          <Employee />
+          <Product />
+          <Product />
+        </Layout>
         <hr />
         <CounterBox />
         <hr />

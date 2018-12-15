@@ -9,22 +9,26 @@ class ActionButton extends Component {
     }
     increment() {
         let { count } = this.state;
+        let { value } = this.props;
         count += 1
         this.setState({ count })
         let { onAction } = this.props;
-        if (onAction)
-            onAction();
+        if (onAction) {
+            let event = { value: value * count }
+            onAction(event);
+        }
     }
     render() {
         let { value } = this.props;
         let { count } = this.state;
+        let className = `btn ${value < 0 ? 'btn-danger' : 'btn-success'}`
         return (
             <div className="action-button">
                 <div className="card card-default">
                     <div className="card-body">
-                        <button onClick={e => this.increment()} className="btn btn-primary">{value}</button>
+                        <button onClick={e => this.increment()} className={className}>{value}</button>
                         &nbsp;&mdash;&nbsp;
-                        <span className="badge badge-danger">{count}</span>
+                        <span className="badge badge-dark">{count}</span>
                     </div>
                 </div>
             </div>
