@@ -8,6 +8,7 @@ class Greeting extends Component {
     }
     render() {
         console.log("Greeting :: render");
+        // this.props.message="im mutating..."  // error, props always rady-only
         let { message } = this.props;
         return (
             <div className="alert alert-info">
@@ -17,6 +18,26 @@ class Greeting extends Component {
             </div>
         );
     }
+    componentDidMount() {
+        console.log("Greeting :: componentDidMount");
+        this.interval=setInterval(() => {
+            //this.forceUpdate();
+        }, 500)
+    }
+    shouldComponentUpdate(nextProps, nextState) {
+        console.log("Greeting :: shouldComponentUpdate");
+        return this.props.message !== nextProps.message;
+    }
+
+    componentDidUpdate() {
+        console.log("Greeting :: componentDidUpdate");
+    }
+
+    componentWillUnmount() {
+        clearInterval(this.interval)
+        console.log("Greeting :: componentWillUnmount");
+    }
+
 }
 
 Greeting.propTypes = {

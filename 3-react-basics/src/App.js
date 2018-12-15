@@ -3,18 +3,19 @@ import PropTypes from 'prop-types'
 
 import 'bootstrap/dist/css/bootstrap.css';
 import Greeting from './components/Greeting';
+import CounterBox from './components/CounterBox';
 
 class App extends Component {
   constructor(props) {
     super()
     //console.log(props);  
     this.state = {
-      message: 'good evening'
+      message: 'hello...'
     }
     console.log("App :: constructor");
   }
   changeMessage(message) {
-    this.setState({ message })
+    this.setState({ message })  // state is mutable...
   }
   render() {
     console.log("App :: render");
@@ -30,14 +31,28 @@ class App extends Component {
         <span className="badge badge-dark">{trainer}</span>
         </h1>
         <hr />
-        <button onClick={e => this.changeMessage('good morning')} className="btn btn-primary">GM</button>&nbsp;
-        <button className="btn btn-primary">GN</button>&nbsp;
-        <button className="btn btn-primary">GE</button>&nbsp;
+        <CounterBox />
         <hr />
-        <Greeting message={message} />
+        <button onClick={e => this.changeMessage('good morning')} className="btn btn-primary">GM</button>&nbsp;
+        <button onClick={e => this.changeMessage('good noon')} className="btn btn-primary">GN</button>&nbsp;
+        <button onClick={e => this.changeMessage('good evening')} className="btn btn-primary">GE</button>&nbsp;
+        <button onClick={e => this.changeMessage('')} className="btn btn-danger">Remove</button>&nbsp;
+        <hr />
+        {message ? <Greeting message={message} /> : null}
       </div>
     );
   }
+
+  componentDidMount() {
+    console.log("App:: componentDidMount");
+    // n/w request..
+    // setTimeout(() => {
+    //   let serverMessage = "hello! from server-side "
+    //   this.setState({ message: serverMessage });
+    // }, 2000)
+  }
+
+
 }
 
 App.propTypes = {
