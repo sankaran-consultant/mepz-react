@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import classNames from 'classnames'
+import Review from './Review';
+import ReviewForm from './ReviewForm';
 
 class Product extends Component {
     constructor(props) {
@@ -22,6 +24,11 @@ class Product extends Component {
         else return null;
     }
 
+    renderReviews() {
+        let { reviews } = this.state;
+        return reviews.map((item, idx) => <Review review={item} key={idx} />)
+    }
+
     renderTabPanel(product) {
         let { currentTab } = this.state;
         switch (currentTab) {
@@ -37,7 +44,10 @@ class Product extends Component {
             }
             case 3: {
                 return (
-                    <div>None Yet</div>
+                    <div>
+                        {this.renderReviews()}
+                        <ReviewForm />
+                    </div>
                 )
             }
             default:

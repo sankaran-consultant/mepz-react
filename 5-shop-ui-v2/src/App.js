@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Navbar from './components/Navbar';
 
 import 'bootstrap/dist/css/bootstrap.css'
+
 import Product from './components/Product';
 
 
