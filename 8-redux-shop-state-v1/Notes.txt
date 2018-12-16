@@ -1,0 +1,86 @@
+
+
+
+Model/State   ==> business data
+View          ==>
+
+
+Soln-1:
+
+MVC pattern
+--------------
+
+      C
+
+  M1       V1
+  M2   /   V2
+       \ 
+  M3       V3
+
+  M4  /    V4
+
+
+   -> 2-way data-binding , is difficult to predict data-flow
+
+
+Soln-2 :
+
+Flux pattern
+--------------
+
+ => uni-directional data flow   
+
+   
+
+-------------------------------------------------------------------
+
+
+how to use redux ?
+
+//------------------------------------
+ step-1 : identify UI appn's state
+//------------------------------------
+
+e.g shopping-UI
+
+        - products
+        - reviews
+        - cart
+        - orders
+        - customer
+        ...
+
+
+//------------------------------------
+ step-2 : identify action(s) which cause stat chane
+//------------------------------------        
+
+
+    - LOAD_PRODUCTS
+    - LOAD_REVIEWS
+    - BUY
+    - CHECKOUT
+    - LOAD_ORDER
+    - ADD_NEW_REVIEW
+
+    .......  
+
+
+//------------------------------------
+ step-3 : define action cerator(s) to create action object(s)
+//------------------------------------        
+
+
+//------------------------------------
+ step-4 : define reducer(s) who can process action(s) with current state
+//------------------------------------ 
+
+
+//------------------------------------
+ step-5 : combile all reducers to rootReducer
+//------------------------------------
+
+
+//------------------------------------
+ step-6 : create store with root reducer
+//------------------------------------

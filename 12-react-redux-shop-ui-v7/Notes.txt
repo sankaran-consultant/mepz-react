@@ -1,0 +1,33 @@
+
+
+
+
+Unit-Testing F.W
+-----------------
+
+    for javascript lang
+
+
+        - jasmine
+        - mocha
+        - Jest
+        ...
+
+--------------------------------
+
+    Jest provide support for these
+
+        - test suites
+        - test cases
+        - assertion
+
+        +
+--------------------------------
+
+     helper lib, to test react components
+
+        - react test utilities
+        // or
+        - enzyme
+
+--------------------------------
